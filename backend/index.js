@@ -1,16 +1,16 @@
 const express = require('express');
-const app = express();
-const port = 3001; // frontend is usually on 3000
-
-// Allow requests from frontend
 const cors = require('cors');
-app.use(cors());
+const app = express();
 
-// hi
+// Enable CORS for all origins (or specify Vercel URL)
+app.use(cors({
+  origin: 'https://my-first-qwo60zrht-chaims-projects-56b1d54e.vercel.app'
+}));
+
 app.get('/hello', (req, res) => {
-  res.send('Hello World from Backend! This is a test message.');
+  res.send('Hello from the backend!');
 });
 
-app.listen(port, () => {
-  console.log(`Backend listening at http://localhost:${port}`);
+app.listen(3001, () => {
+  console.log('Server is running on port 3001');
 });
