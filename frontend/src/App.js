@@ -5,7 +5,7 @@ function App() {
 
   const fetchMessage = async () => {
     try {
-      const response = await fetch("https://my-first-app-bzsx.onrender.com");
+      const response = await fetch("https://my-first-app-bzsx.onrender.com/hello");
       const text = await response.text();
       setMessage(text);
     } catch (err) {
